@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import { motion } from "framer-motion";
-import { Star, ArrowRight } from "lucide-react";
+import { Star, ArrowRight, MapPin, Phone } from "lucide-react";
 import { artists } from "@/data/artists";
 
 const allRecentWorkImages = [
@@ -50,8 +50,8 @@ const reviews = [
   },
 ];
 
-const sectionReveal = {
-  hidden: { opacity: 0, y: 18, filter: "blur(4px)" },
+const reveal = {
+  hidden: { opacity: 0, y: 16, filter: "blur(4px)" },
   visible: { opacity: 1, y: 0, filter: "blur(0px)" },
 };
 
@@ -60,194 +60,169 @@ const Index = () => {
 
   return (
     <>
-      {/* ─── HERO — Above the fold, value prop + CTA dominant ─── */}
-      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/shop-exterior.jpg')" }}
-        />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-4 leading-[0.95]"
-          >
-            Unity Tattoo
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-sm md:text-base tracking-[0.3em] uppercase text-white/60 mb-8"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            1395 Commercial Drive &nbsp;·&nbsp; Vancouver, BC
-          </motion.p>
-
-          {/* Primary CTA — large and prominent */}
+      {/* ═══════════════════════════════════════════
+          SECTION 1 — HERO: Split layout, CTA dominant
+          Left: value prop + CTA. Right: image.
+      ═══════════════════════════════════════════ */}
+      <section className="relative min-h-[100svh] grid grid-cols-1 lg:grid-cols-2">
+        {/* Left panel — dark, text + CTA */}
+        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-24 py-24 lg:py-0 bg-foreground text-background order-2 lg:order-1">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col items-center gap-4"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
           >
+            <p
+              className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-background/50 mb-6"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Vancouver's Premier Tattoo Collective
+            </p>
+            <h1
+              className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl leading-[0.92] mb-6"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Unity Tattoo
+            </h1>
+            <p
+              className="flex items-center gap-2 text-sm text-background/50 tracking-wide mb-10"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              <MapPin size={14} />
+              1395 Commercial Drive &nbsp;·&nbsp; Vancouver, BC
+            </p>
+
+            {/* Primary CTA */}
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 bg-white text-black px-10 py-4 text-sm tracking-[0.15em] uppercase font-semibold transition-all duration-300 hover:bg-white/90 active:scale-[0.97] shadow-2xl"
-              style={{ fontFamily: 'var(--font-body)' }}
+              className="inline-flex items-center gap-3 bg-background text-foreground px-10 py-5 text-sm tracking-[0.15em] uppercase font-semibold transition-all duration-300 hover:bg-background/90 active:scale-[0.97] shadow-2xl mb-8"
+              style={{ fontFamily: "var(--font-body)" }}
             >
               Book an Appointment
               <ArrowRight size={16} />
             </Link>
-          </motion.div>
 
-          {/* Social proof teaser */}
+            {/* Social proof */}
+            <div className="flex items-center gap-3 text-background/40">
+              <div className="flex gap-0.5">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} size={13} className="fill-yellow-500 text-yellow-500" />
+                ))}
+              </div>
+              <span className="text-xs tracking-wide" style={{ fontFamily: "var(--font-body)" }}>
+                5-Star Rated on Google
+              </span>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Right panel — hero image */}
+        <div className="relative min-h-[50vh] lg:min-h-0 order-1 lg:order-2">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-10 flex items-center justify-center gap-2 text-white/50"
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2 }}
+            className="absolute inset-0"
           >
-            <div className="flex gap-0.5">
-              {[1,2,3,4,5].map(i => (
-                <Star key={i} size={12} className="fill-yellow-500 text-yellow-500" />
-              ))}
-            </div>
-            <span className="text-xs tracking-wide" style={{ fontFamily: 'var(--font-body)' }}>
-              5-Star Rated on Google
-            </span>
+            <img
+              src="/images/shop-exterior.jpg"
+              alt="Unity Tattoo studio"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/20" />
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 text-xs tracking-[0.3em] uppercase"
-          style={{ fontFamily: 'var(--font-body)' }}
-        >
-          Scroll Down
-        </motion.div>
       </section>
 
-      {/* ─── THE STUDIO — Solution/Value prop ─── */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="grid md:grid-cols-[1fr,auto] gap-10 md:gap-16 items-center">
-            <div>
-              <motion.h2
-                variants={sectionReveal}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6 }}
-                className="section-heading mb-6 md:text-left text-center"
-              >
-                The Studio
-              </motion.h2>
-              <motion.p
-                variants={sectionReveal}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="text-muted-foreground leading-relaxed md:text-left text-center"
-              >
-                Located on Vancouver's iconic Commercial Drive, Unity Tattoo is a collective of talented artists united
-                by a shared passion for exceptional tattooing. Our studio provides a welcoming, professional environment
-                where artistry meets precision.
-              </motion.p>
-            </div>
-            <motion.div
-              variants={sectionReveal}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="flex flex-col gap-3 items-center md:items-start"
-            >
-              <Link to="/the-shop" className="cta-button whitespace-nowrap">
-                Explore the Shop
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase font-medium text-muted-foreground hover:text-foreground transition-colors"
-                style={{ fontFamily: 'var(--font-body)' }}
-              >
-                Book Now <ArrowRight size={12} />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── TRUST — Reviews pulled up for early social proof ─── */}
-      <section className="py-20 md:py-28 bg-muted">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            variants={sectionReveal}
+      {/* ═══════════════════════════════════════════
+          SECTION 2 — TRUST BAR: Reviews as horizontal strip
+          Structurally different: single-row, edge-to-edge
+      ═══════════════════════════════════════════ */}
+      <section className="bg-muted border-y border-border overflow-hidden">
+        <div className="container mx-auto px-4 py-10 md:py-14">
+          <motion.div
+            variants={reveal}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="section-heading mb-4"
+            className="flex items-center justify-center gap-2 mb-8"
           >
-            What People Say
-          </motion.h2>
-          <motion.p
-            variants={sectionReveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center text-muted-foreground text-sm mb-14"
-          >
-            Reviews from Google
-          </motion.p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+            <div className="flex gap-0.5">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Star key={i} size={16} className="fill-yellow-500 text-yellow-500" />
+              ))}
+            </div>
+            <span
+              className="text-xs tracking-[0.15em] uppercase text-muted-foreground"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              What People Say — Reviews from Google
+            </span>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
             {reviews.map((review, i) => (
-              <motion.div
+              <motion.blockquote
                 key={i}
-                variants={sectionReveal}
+                variants={reveal}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-                className="bg-background border border-border p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-300"
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="px-6 md:px-8 py-6 md:py-2 text-center"
               >
-                <div className="flex items-center justify-center gap-1 mb-4">
-                  {Array.from({ length: review.rating }).map((_, j) => (
-                    <Star key={j} size={16} className="fill-yellow-500 text-yellow-500" />
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5">"{review.text}"</p>
-                <p className="text-xs font-semibold tracking-wider uppercase" style={{ fontFamily: 'var(--font-body)' }}>{review.name}</p>
-              </motion.div>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 italic">
+                  "{review.text}"
+                </p>
+                <cite
+                  className="text-xs font-semibold tracking-wider uppercase not-italic"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  {review.name}
+                </cite>
+              </motion.blockquote>
             ))}
           </div>
-          {/* Inline CTA after trust */}
-          <motion.div
-            variants={sectionReveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center"
-          >
-            <Link to="/contact" className="cta-button">
-              Book an Appointment
-            </Link>
-          </motion.div>
         </div>
       </section>
 
-      {/* ─── ARTISTS — Showcase the team ─── */}
+      {/* ═══════════════════════════════════════════
+          INLINE CTA BANNER — full-width dark strip
+      ═══════════════════════════════════════════ */}
+      <motion.section
+        variants={reveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
+        className="bg-foreground text-background py-6"
+      >
+        <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+          <p
+            className="text-sm tracking-wide text-background/70"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Ready to get started?
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-3 text-xs tracking-[0.15em] uppercase font-semibold transition-all duration-300 hover:bg-background/90 active:scale-[0.97]"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Book Now <ArrowRight size={14} />
+          </Link>
+        </div>
+      </motion.section>
+
+      {/* ═══════════════════════════════════════════
+          SECTION 3 — ARTISTS: Large alternating cards
+          Each artist gets more visual weight + individual CTA
+      ═══════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
           <motion.h2
-            variants={sectionReveal}
+            variants={reveal}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -257,43 +232,68 @@ const Index = () => {
             Our Artists
           </motion.h2>
           <motion.p
-            variants={sectionReveal}
+            variants={reveal}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center text-muted-foreground mb-14 max-w-xl mx-auto"
+            className="text-center text-muted-foreground mb-16 max-w-xl mx-auto"
           >
             Meet the talented team behind Unity Tattoo. Each artist brings their own unique style and expertise.
           </motion.p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
+          {/* Featured artists — alternating large cards */}
+          <div className="space-y-2">
             {artists.map((artist, index) => (
               <motion.div
                 key={artist.slug}
-                variants={sectionReveal}
+                variants={reveal}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.5, delay: 0.05 }}
               >
-                <Link to={`/artists/${artist.slug}`} className="group relative block aspect-square overflow-hidden">
-                  <img
-                    src={artist.image}
-                    alt={artist.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1">
-                    <span className="font-serif text-xl md:text-2xl lg:text-3xl text-white text-center leading-tight px-4">
+                <Link
+                  to={`/artists/${artist.slug}`}
+                  className={`group grid grid-cols-1 md:grid-cols-2 min-h-[280px] md:min-h-[340px] overflow-hidden bg-muted hover:bg-muted/80 transition-colors duration-300 ${
+                    index % 2 === 1 ? "md:direction-rtl" : ""
+                  }`}
+                >
+                  {/* Image */}
+                  <div className={`relative overflow-hidden ${index % 2 === 1 ? "md:order-2" : ""}`}>
+                    <img
+                      src={artist.image}
+                      alt={artist.name}
+                      className="w-full h-full object-cover min-h-[240px] md:min-h-0 grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500" />
+                  </div>
+
+                  {/* Info */}
+                  <div
+                    className={`flex flex-col justify-center px-8 md:px-12 py-8 ${
+                      index % 2 === 1 ? "md:order-1 md:text-right md:items-end" : "md:items-start"
+                    }`}
+                    style={{ direction: "ltr" }}
+                  >
+                    <span
+                      className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-2"
+                      style={{ fontFamily: "var(--font-body)" }}
+                    >
+                      {artist.specialty}
+                    </span>
+                    <span
+                      className="text-2xl md:text-3xl lg:text-4xl mb-4"
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
                       {artist.name}
                     </span>
                     <span
-                      className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      style={{ fontFamily: 'var(--font-body)' }}
+                      className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase font-medium text-muted-foreground group-hover:text-foreground transition-colors"
+                      style={{ fontFamily: "var(--font-body)" }}
                     >
-                      {artist.specialty}
+                      View Portfolio <ArrowRight size={12} />
                     </span>
                   </div>
                 </Link>
@@ -301,14 +301,14 @@ const Index = () => {
             ))}
           </div>
 
-          {/* CTA below artists */}
+          {/* CTA after artists */}
           <motion.div
-            variants={sectionReveal}
+            variants={reveal}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center mt-14"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-center mt-16"
           >
             <Link to="/contact" className="cta-button">
               Book an Appointment
@@ -317,24 +317,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── RECENT WORK — Portfolio proof ─── */}
-      <section className="py-20 md:py-28 bg-muted">
-        <div className="container mx-auto px-4 text-center">
+      {/* ═══════════════════════════════════════════
+          SECTION 4 — RECENT WORK: Portfolio proof
+          Wider grid, overlapping CTA
+      ═══════════════════════════════════════════ */}
+      <section className="relative bg-foreground text-background py-20 md:py-28">
+        <div className="container mx-auto px-4">
           <motion.h2
-            variants={sectionReveal}
+            variants={reveal}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="section-heading mb-14"
+            className="text-3xl md:text-5xl font-normal text-center mb-14"
+            style={{ fontFamily: "var(--font-heading)" }}
           >
             Recent Work
           </motion.h2>
-          <div className="gallery-grid">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
             {recentWorkImages.map((src, num) => (
               <motion.div
                 key={num}
-                variants={sectionReveal}
+                variants={reveal}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.1 }}
@@ -350,95 +354,156 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Overlapping CTA inside portfolio */}
+          <motion.div
+            variants={reveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-center mt-14"
+          >
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-3 bg-background text-foreground px-10 py-4 text-sm tracking-[0.15em] uppercase font-semibold transition-all duration-300 hover:bg-background/90 active:scale-[0.97]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Book an Appointment <ArrowRight size={16} />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      {/* ─── LOCATION ─── */}
+      {/* ═══════════════════════════════════════════
+          SECTION 5 — THE STUDIO: Value proposition
+          Asymmetric layout with prominent CTA
+      ═══════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
-          <motion.h2
-            variants={sectionReveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-            className="section-heading mb-8"
-          >
-            Location
-          </motion.h2>
-          <motion.p
-            variants={sectionReveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-center text-muted-foreground tracking-[0.15em] mb-12"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            1395 Commercial Drive &nbsp;·&nbsp; Vancouver, BC Canada
-          </motion.p>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div className="lg:col-span-3">
+              <motion.h2
+                variants={reveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl md:text-5xl font-normal mb-6"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                The Studio
+              </motion.h2>
+              <motion.p
+                variants={reveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="text-muted-foreground leading-relaxed"
+              >
+                Located on Vancouver's iconic Commercial Drive, Unity Tattoo is a collective of talented artists united
+                by a shared passion for exceptional tattooing. Our studio provides a welcoming, professional environment
+                where artistry meets precision.
+              </motion.p>
+            </div>
+            <motion.div
+              variants={reveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="lg:col-span-2 flex flex-col gap-4 items-start"
+            >
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 text-sm tracking-[0.15em] uppercase font-semibold transition-all duration-300 hover:bg-foreground/90 active:scale-[0.97] w-full justify-center"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Book an Appointment <ArrowRight size={16} />
+              </Link>
+              <Link
+                to="/the-shop"
+                className="cta-button w-full text-center"
+              >
+                Explore the Shop
+              </Link>
+              <div className="flex items-center gap-2 text-muted-foreground mt-2">
+                <Phone size={14} />
+                <span className="text-sm" style={{ fontFamily: "var(--font-body)" }}>604-423-3343</span>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          SECTION 6 — LOCATION + FINAL CTA: Combined close
+          Map with side CTA panel — not stacked
+      ═══════════════════════════════════════════ */}
+      <section className="bg-muted">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+          {/* Map */}
           <motion.div
-            variants={sectionReveal}
+            variants={reveal}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full h-[400px] overflow-hidden"
+            transition={{ duration: 0.6 }}
+            className="min-h-[350px] lg:min-h-0"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2603.123!2d-123.0695!3d49.2715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548671854e0ee703%3A0x7fbc48cb507cb03c!2s1395+Commercial+Dr%2C+Vancouver%2C+BC+V5L+3X5%2C+Canada!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
               width="100%"
               height="100%"
-              style={{ border: 0 }}
+              style={{ border: 0, minHeight: "350px" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Unity Tattoo Location"
             />
           </motion.div>
-        </div>
-      </section>
 
-      {/* ─── FINAL CTA — Strong close ─── */}
-      <section className="py-24 md:py-32 bg-primary text-primary-foreground text-center">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            variants={sectionReveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-normal mb-6"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            Ready to Get Inked?
-          </motion.h2>
-          <motion.p
-            variants={sectionReveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-primary-foreground/70 mb-10 max-w-lg mx-auto"
-          >
-            Book your appointment today and let our talented artists bring your vision to life.
-          </motion.p>
-          <motion.div
-            variants={sectionReveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-          >
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 bg-white text-black px-10 py-4 text-sm tracking-[0.15em] uppercase font-semibold transition-all duration-300 hover:bg-white/90 active:scale-[0.97] shadow-xl"
-              style={{ fontFamily: 'var(--font-body)' }}
+          {/* Final CTA panel */}
+          <div className="bg-foreground text-background flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 lg:py-0">
+            <motion.div
+              variants={reveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
             >
-              Book an Appointment
-              <ArrowRight size={16} />
-            </Link>
-          </motion.div>
+              <h2
+                className="text-3xl md:text-4xl lg:text-5xl mb-4 leading-[1.05]"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                Ready to Get Inked?
+              </h2>
+              <p
+                className="text-background/60 mb-8 leading-relaxed"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Book your appointment today and let our talented artists bring your vision to life.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-3 bg-background text-foreground px-10 py-4 text-sm tracking-[0.15em] uppercase font-semibold transition-all duration-300 hover:bg-background/90 active:scale-[0.97]"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  Book an Appointment
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+              <p
+                className="text-background/40 text-sm mt-8 flex items-center gap-2"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                <MapPin size={14} />
+                1395 Commercial Drive &nbsp;·&nbsp; Vancouver, BC Canada
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
     </>
