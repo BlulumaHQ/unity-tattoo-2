@@ -1,70 +1,161 @@
-import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const Contact = () => {
-  const [searchParams] = useSearchParams();
-  const artistParam = searchParams.get("artist") || "";
-  
-  // Build Jotform URL with prefill if artist is specified
-  const jotformBaseUrl = "https://form.jotform.com/243295237116254";
-  const jotformUrl = artistParam
-    ? `${jotformBaseUrl}?preferredArtists=${encodeURIComponent(artistParam)}`
-    : jotformBaseUrl;
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.first_name || !form.last_name || !form.email || !form.message) {
+      toast({ title: "Please fill in all required fields", variant: "destructive" });
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.from("contact_submissions").insert({
+        first_name: form.first_name,
+        last_name: form.last_name,
+        email: form.email,
+        message: form.message,
+      });
+      if (error) throw error;
+      setSubmitted(true);
+    } catch {
+      toast({ title: "Something went wrong. Please try again.", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const contactInfo = [
+    { icon: MapPin, text: "1395 Commercial Drive, Vancouver, BC" },
+    { icon: Phone, text: "604.423.3343" },
+    { icon: Mail, text: "unitytattoo@gmail.com" },
+  ];
 
   return (
-    <>
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="section-heading mb-6"
-          >
-            Book Your Appointment
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-center text-muted-foreground mb-12"
-          >
-            Fill out the booking form below and we'll get back to you as soon as possible.
-          </motion.p>
+    <section className="py-24 md:py-32">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="section-heading mb-4"
+        >
+          Get In Touch
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-center text-muted-foreground mb-12"
+        >
+          Have a question? We'd love to hear from you.
+        </motion.p>
 
+        {/* Contact Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+        >
+          {contactInfo.map(({ icon: Icon, text }) => (
+            <div key={text} className="flex items-center gap-3 justify-center md:justify-start p-4 rounded-lg border border-white/10 bg-white/[0.03]">
+              <Icon size={18} className="text-[hsl(var(--brand-green))] shrink-0" />
+              <span className="text-sm text-muted-foreground">{text}</span>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Form */}
+        {submitted ? (
           <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center py-16 px-6 rounded-lg border border-white/10 bg-white/[0.03]"
+          >
+            <h2 className="text-2xl font-bold mb-4">Message Sent!</h2>
+            <p className="text-muted-foreground">
+              Thanks for reaching out! We'll get back to you as soon as possible.
+            </p>
+          </motion.div>
+        ) : (
+          <motion.form
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="w-full"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            onSubmit={handleSubmit}
+            className="space-y-6"
           >
-            <iframe
-              src={jotformUrl}
-              title="Unity Tattoo Booking Form"
-              className="w-full border-0 rounded"
-              style={{ minHeight: '1200px' }}
-              allowFullScreen
-            />
-          </motion.div>
-        </div>
-      </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium mb-2">First Name *</label>
+                <Input name="first_name" value={form.first_name} onChange={handleChange} required />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">Last Name *</label>
+                <Input name="last_name" value={form.last_name} onChange={handleChange} required />
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Email *</label>
+              <Input name="email" type="email" value={form.email} onChange={handleChange} required />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Message *</label>
+              <Textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="How can we help?"
+                className="min-h-[150px]"
+                required
+              />
+            </div>
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-[hsl(var(--brand-green))] hover:bg-[hsl(var(--brand-green))]/90 text-white font-semibold tracking-wide py-6 text-base"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </Button>
+          </motion.form>
+        )}
 
-      {/* Map */}
-      <section className="pb-0">
-        <div className="w-full h-[400px]">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2603.123!2d-123.0695!3d49.2715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548671854e0ee703%3A0x7fbc48cb507cb03c!2s1395+Commercial+Dr%2C+Vancouver%2C+BC+V5L+3X5%2C+Canada!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Unity Tattoo Location"
-          />
-        </div>
-      </section>
-    </>
+        {/* Book link */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-center text-muted-foreground mt-12 text-sm"
+        >
+          Looking to book an appointment?{" "}
+          <Link to="/book" className="text-[hsl(var(--brand-green))] hover:underline font-medium">
+            Book here
+          </Link>
+        </motion.p>
+      </div>
+    </section>
   );
 };
 
