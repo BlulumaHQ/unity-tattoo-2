@@ -299,7 +299,7 @@ const Index = () => {
                         View Portfolio <ArrowRight size={12} />
                       </Link>
                       <Link
-                        to="/book"
+                        to={`/book?artist=${artist.slug}`}
                         className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase font-semibold px-4 py-2 transition-colors text-white rounded-sm"
                         style={{ backgroundColor: "hsl(var(--brand-green))", fontFamily: "var(--font-body)" }}
                       >
