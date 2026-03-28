@@ -5,9 +5,9 @@ import logoSvg from "@/assets/unity-tattoo-logo.svg";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  
   { label: "The Shop", path: "/the-shop" },
   { label: "Aftercare", path: "/aftercare" },
+  { label: "Gift Card", path: "/gift-card" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -28,7 +28,6 @@ const Header = () => {
           <img src={logoSvg} alt="Unity Tattoo" className="h-[60px] w-auto" />
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -54,7 +53,6 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -64,7 +62,6 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden border-t border-white/10" style={{ backgroundColor: 'hsl(0 0% 5%)' }}>
           <nav className="flex flex-col items-center py-6 gap-6">
