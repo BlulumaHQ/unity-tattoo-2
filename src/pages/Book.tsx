@@ -48,9 +48,25 @@ const artistOptions = [
 const dayOptions = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 const Book = () => {
+  const [searchParams] = useSearchParams();
   const [files, setFiles] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  // Map slug to artist name for pre-selection
+  const slugToName: Record<string, string> = {
+    "heather-drew": "Heather Drew",
+    "paige-mcgrath": "Paige McGrath",
+    "bronson-ramos": "Bronson Ramos",
+    "jesse-kvarnstrom": "Jesse Kvarnstrom",
+    "soodie-yang": "Soodie Yang",
+    "brianne-thorne": "Brianne Thorne",
+    "atisha-rainey": "Atisha Rainey",
+    "jay-skeleton": "Jay Skeleton",
+  };
+
+  const artistParam = searchParams.get("artist") || "";
+  const preselectedArtist = slugToName[artistParam] || "";
 
   const {
     register,
@@ -61,7 +77,7 @@ const Book = () => {
   } = useForm<BookingFormData>({
     resolver: zodResolver(bookingSchema),
     defaultValues: {
-      preferredArtists: [],
+      preferredArtists: preselectedArtist ? [preselectedArtist] : [],
       preferredDays: [],
     },
   });
