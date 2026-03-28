@@ -14,7 +14,7 @@ const ArtistDetail = () => {
     return (
       <section className="py-32 text-center">
         <h1 className="section-heading mb-4">Artist Not Found</h1>
-        <Link to="/artists" className="cta-button">Back to Artists</Link>
+        <Link to="/" className="cta-button">Back to Home</Link>
       </section>
     );
   }
@@ -24,11 +24,8 @@ const ArtistDetail = () => {
     setLightboxOpen(true);
   };
 
-  const bookingUrl = `/contact?artist=${encodeURIComponent(artist.name)}`;
-
   return (
     <>
-      {/* Artist Header */}
       <section className="py-24 md:py-32 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -61,13 +58,12 @@ const ArtistDetail = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
         >
-          <Link to={bookingUrl} className="cta-button">
+          <Link to="/book" className="cta-button">
             Book with {artist.name.split(" ")[0]}
           </Link>
         </motion.div>
       </section>
 
-      {/* Gallery Grid */}
       <section className="pb-24 md:pb-32">
         <div className="container mx-auto px-0 md:px-4">
           <div className="gallery-grid">

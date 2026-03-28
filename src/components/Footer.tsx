@@ -15,72 +15,50 @@ const Footer = () => {
     <footer style={{ backgroundColor: 'hsl(0 0% 5%)', color: 'hsl(0 0% 95%)' }}>
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Logo & Contact */}
           <div className="flex flex-col items-center md:items-start gap-4">
             <span className="text-xl tracking-[0.35em] uppercase font-serif text-white/90">Unity Tattoo</span>
             <div className="text-white/50 text-sm text-center md:text-left space-y-1">
               <p>1395 Commercial Drive</p>
               <p>Vancouver, BC Canada</p>
               <p>604-423-3343</p>
-              <a href="mailto:unitytattoo@gmail.com" className="hover:text-white transition-colors block">
-                unitytattoo@gmail.com
-              </a>
+              <a href="mailto:unitytattoo@gmail.com" className="hover:text-white transition-colors block">unitytattoo@gmail.com</a>
             </div>
             <div className="flex items-center gap-4 mt-2">
-              <a href="https://www.instagram.com/unity_tattoo/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors">
-                <Instagram size={18} />
-              </a>
-              <a href="https://www.facebook.com/unitytattoo" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors">
-                <Facebook size={18} />
-              </a>
-              <a href="https://www.threads.com/@unitytattoovancouver" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors">
-                <ThreadsIcon size={17} />
-              </a>
+              <a href="https://www.instagram.com/unity_tattoo/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors"><Instagram size={18} /></a>
+              <a href="https://www.facebook.com/unitytattoo" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors"><Facebook size={18} /></a>
+              <a href="https://www.threads.com/@unitytattoovancouver" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors"><ThreadsIcon size={17} /></a>
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <h4 className="text-xs tracking-[0.2em] uppercase font-semibold text-white/70 mb-2" style={{ fontFamily: 'var(--font-body)' }}>Quick Links</h4>
             {[
               { label: "Home", path: "/" },
-              
               { label: "The Shop", path: "/the-shop" },
               { label: "Aftercare", path: "/aftercare" },
+              { label: "Gift Card", path: "/gift-card" },
+              { label: "Book Now", path: "/book" },
               { label: "Contact", path: "/contact" },
             ].map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="text-sm text-white/40 hover:text-white transition-colors tracking-wide"
-              >
+              <Link key={link.path} to={link.path} className="text-sm text-white/40 hover:text-white transition-colors tracking-wide">
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Artists - Two Columns */}
           <div className="flex flex-col items-center md:items-start">
             <h4 className="text-xs tracking-[0.2em] uppercase font-semibold text-white/70 mb-4" style={{ fontFamily: 'var(--font-body)' }}>Our Artists</h4>
             <div className="grid grid-cols-2 gap-x-8 gap-y-2">
               <div className="flex flex-col gap-2">
                 {artistsCol1.map((name) => (
-                  <Link
-                    key={name}
-                    to={`/artists/${name.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="text-sm text-white/40 hover:text-white transition-colors tracking-wide whitespace-nowrap"
-                  >
+                  <Link key={name} to={`/artists/${name.toLowerCase().replace(/\s+/g, "-")}`} className="text-sm text-white/40 hover:text-white transition-colors tracking-wide whitespace-nowrap">
                     {name}
                   </Link>
                 ))}
               </div>
               <div className="flex flex-col gap-2">
                 {artistsCol2.map((name) => (
-                  <Link
-                    key={name}
-                    to={`/artists/${name.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="text-sm text-white/40 hover:text-white transition-colors tracking-wide whitespace-nowrap"
-                  >
+                  <Link key={name} to={`/artists/${name.toLowerCase().replace(/\s+/g, "-")}`} className="text-sm text-white/40 hover:text-white transition-colors tracking-wide whitespace-nowrap">
                     {name}
                   </Link>
                 ))}
@@ -90,18 +68,10 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright bar */}
       <div className="border-t border-white/10 py-3">
         <p className="text-center text-[11px] text-white/25 tracking-wide">
           © 2026 Unity Tattoo | Web Design by{" "}
-          <a
-            href="https://www.bluluma.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white/50 transition-colors"
-          >
-            Bluluma
-          </a>
+          <a href="https://www.bluluma.com" target="_blank" rel="noopener noreferrer" className="hover:text-white/50 transition-colors">Bluluma</a>
         </p>
       </div>
     </footer>
