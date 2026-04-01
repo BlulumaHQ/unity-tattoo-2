@@ -84,17 +84,11 @@ const Index = () => {
             >
               8 experienced artists on Commercial Drive. Every style, done well.
             </p>
-            <p
-              className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-background/50 mb-6"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Tattooing Vancouver since 2011.
-            </p>
             <h1
               className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[0.92] mb-6"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              Vancouver's Most Trusted Tattoo Collective
+              Tattooing Vancouver Since 2011
             </h1>
             <p
               className="flex items-center gap-2 text-sm text-background/50 tracking-wide mb-10"
