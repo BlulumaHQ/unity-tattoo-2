@@ -45,48 +45,62 @@ const ArtistDetail = () => {
           {artist.specialty}
           {artist.isGuest && " · Guest Artist"}
         </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="text-muted-foreground max-w-xl mx-auto leading-relaxed mb-10 px-4"
-        >
-          {artist.bio}
-        </motion.p>
+        {artist.bio && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-muted-foreground max-w-xl mx-auto leading-relaxed mb-10 px-4"
+          >
+            {artist.bio}
+          </motion.p>
+        )}
+        {!artist.bio && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-muted-foreground/50 max-w-xl mx-auto leading-relaxed mb-10 px-4 italic"
+          >
+            Bio coming soon.
+          </motion.p>
+        )}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
         >
-          <Link to="/book" className="cta-button">
+          <Link to={`/book?artist=${artist.slug}`} className="cta-button">
             Book with {artist.name.split(" ")[0]}
           </Link>
         </motion.div>
       </section>
 
-      <section className="pb-24 md:pb-32">
-        <div className="container mx-auto px-0 md:px-4">
-          <div className="gallery-grid">
-            {artist.gallery.map((img, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="aspect-square overflow-hidden cursor-pointer"
-                onClick={() => openLightbox(index)}
-              >
-                <img
-                  src={img}
-                  alt={`${artist.name} tattoo work ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </motion.div>
-            ))}
+      {artist.gallery.length > 0 && (
+        <section className="pb-24 md:pb-32">
+          <div className="container mx-auto px-0 md:px-4">
+            <div className="gallery-grid">
+              {artist.gallery.map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="aspect-square overflow-hidden cursor-pointer"
+                  onClick={() => openLightbox(index)}
+                >
+                  <img
+                    src={img}
+                    alt={`${artist.name} tattoo work ${index + 1}`}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <ImageLightbox
         images={artist.gallery}

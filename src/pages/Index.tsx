@@ -74,7 +74,13 @@ const Index = () => {
               className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-background/50 mb-6"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              8 world-class artists on Commercial Drive. Every style. Since 2011.
+              8 experienced artists on Commercial Drive. Every style, done well.
+            </p>
+            <p
+              className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-background/50 mb-6"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Tattooing Vancouver since 2011.
             </p>
             <h1
               className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[0.92] mb-6"
@@ -409,7 +415,7 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="text-muted-foreground leading-relaxed"
               >
-                Located on Vancouver's iconic Commercial Drive, Unity Tattoo has been a cornerstone of East Van's creative community since 2011. Our collective of 8 world-class artists brings together decades of experience across every tattoo style — from fine line realism to bold neo-traditional.
+                Located on Vancouver's iconic Commercial Drive, Unity Tattoo has been a cornerstone of East Van's creative community since 2011. Our collective of 8 talented artists brings together decades of experience across every tattoo style — from fine line realism to bold neo-traditional.
               </motion.p>
             </div>
             <motion.div

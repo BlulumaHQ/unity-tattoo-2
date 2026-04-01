@@ -14,8 +14,8 @@ export const artists: Artist[] = [
   {
     name: "Heather Drew",
     slug: "heather-drew",
-    specialty: "Fine line & illustrative",
-    bio: "Heather brings a refined, illustrative approach to every piece. Her attention to detail and dedication to craft make her one of Unity Tattoo's most sought-after artists.",
+    specialty: "Realism",
+    bio: "Heather specializes in realism. Her work ranges from refined micro tattoos, life-like animal and pet portraits, to subjects with just the right dose of the strange and disturbing.",
     image: "/images/artist-heather.webp",
     gallery: [
       "/images/artist-heather.webp",
@@ -31,8 +31,8 @@ export const artists: Artist[] = [
   {
     name: "Paige McGrath",
     slug: "paige-mcgrath",
-    specialty: "Blackwork & dotwork",
-    bio: "Paige specializes in bold blackwork and intricate dotwork designs. Her unique style blends traditional techniques with modern aesthetics.",
+    specialty: "Neo-traditional & non-traditional",
+    bio: "Paige specializes in neo-traditional and non-traditional styles, with a particular fondness for bright poppy colors and high-contrast designs. When she's not tattooing, Paige draws inspiration by immersing herself in books, or exploring the world outside.",
     image: "/images/artist-paige.webp",
     gallery: [
       "/images/artist-paige.webp",
@@ -48,8 +48,8 @@ export const artists: Artist[] = [
   {
     name: "Bronson Ramos",
     slug: "bronson-ramos",
-    specialty: "Traditional & neo-traditional",
-    bio: "Bronson's work is rooted in traditional tattoo art with a neo-traditional twist. Bold lines, vibrant energy, and timeless composition define his portfolio.",
+    specialty: "Cursed neo-traditional",
+    bio: "Bronson's tattoo art style is best described as cursed neotraditional, with bold lines, bright colour schemes, and a grotesque take on pop culture characters. Due to his traditional apprenticeship however, he's more than comfortable to do black and grey, traditional americana, or any number of tattoo styles.",
     image: "/images/artist-bronson.webp",
     gallery: [
       "/images/artist-bronson.webp",
@@ -65,8 +65,8 @@ export const artists: Artist[] = [
   {
     name: "Jesse Kvarnstrom",
     slug: "jesse-kvarnstrom",
-    specialty: "Realism & portrait",
-    bio: "Jesse's hyperrealistic tattoos capture incredible detail. Specializing in portraits and realism, his work speaks to a deep understanding of light, shadow, and form.",
+    specialty: "Neo-traditional & traditional",
+    bio: "Jesse Kvarnstrom is a tattoo artist whose work blends elements of traditional and new school tattoo styles. Drawing inspiration from American traditional, neo-traditional, and new school influences, he brings a unique twist to each design.",
     image: "/images/artist-jesse.webp",
     gallery: [
       "/images/artist-jesse.webp",
@@ -82,8 +82,8 @@ export const artists: Artist[] = [
   {
     name: "Soodie Yang",
     slug: "soodie-yang",
-    specialty: "Watercolor & illustrative",
-    bio: "Soodie's watercolor tattoos are vibrant and expressive. Her illustrative style brings a painterly quality to skin art that is truly unique.",
+    specialty: "Black and grey realism & fine line",
+    bio: "Rooted in Black and Grey Realism, Soodie is inspired by classical statues and the beauty of the human form, which she translates to detailed, realistic tattoos.",
     image: "/images/artist-soodie.webp",
     gallery: [
       "/images/artist-soodie.webp",
@@ -99,8 +99,8 @@ export const artists: Artist[] = [
   {
     name: "Brianne Throne",
     slug: "brianne-throne",
-    specialty: "Neo-traditional & illustrative",
-    bio: "Brianne's elegant designs celebrate bold color and rich illustration. Each piece is carefully composed with masterful detail and dynamic composition.",
+    specialty: "Neo-traditional & neo-Japanese",
+    bio: "Brianne is a multi-style tattoo artist with a special interest in illustrative neo-traditional and neo-Japanese design. With 7 years of experience in the trade, she is best known for her full colour anime and pop culture tattoos.",
     image: "/images/artist-brianne.webp",
     gallery: [
       "/images/artist-brianne.webp",
@@ -116,8 +116,8 @@ export const artists: Artist[] = [
   {
     name: "Atisha Rainey",
     slug: "atisha-rainey",
-    specialty: "Neo-traditional & color",
-    bio: "Atisha's neo-traditional work features bold colors and striking compositions. Her artistic vision brings a fresh perspective to classic tattooing styles.",
+    specialty: "Neo-traditional & illustrative",
+    bio: "Atisha is known for her strong illustrative skill set, which features a blend of various styles. She enjoys incorporating Art Nouveau influences, adding an elegant and flowing aesthetic to her designs, while using gothic elements to create stark, contrasting visuals.",
     image: "/images/artist-atisha.webp",
     gallery: [
       "/images/artist-atisha.webp",
@@ -131,23 +131,11 @@ export const artists: Artist[] = [
     ],
   },
   {
-    name: "Jay Skeletons",
-    slug: "jay-skeletons",
-    specialty: "Neo-Japanese & black and grey",
-    bio: "Jay has been tattooing professionally for 5 years, constantly pushing boundaries through different forms of art. With experience tattooing across Canada and in Japan, he brings a global perspective to the craft. His true passion lies in bold neo-Japanese color and dark, black and grey illustrative pieces.",
-    image: "/images/artist-jay.webp",
-    gallery: [
-      "/images/artist-jay.webp",
-      "/images/portfolio/tattoo-japanese-dragon.jpg",
-      "/images/portfolio/tattoo-frog-samurai.webp",
-      "/images/portfolio/tattoo-snake-bg.webp",
-      "/images/tattoo-work-6.jpg",
-      "/images/tattoo-work-8.jpg",
-      "/images/portfolio/tattoo-eagle-snake.webp",
-      "/images/portfolio/tattoo-wolf-realism.jpg",
-    ],
-    isGuest: true,
-    instagram: "https://www.instagram.com/skeletonsforsale/",
-    email: "skeletonsforsale@gmail.com",
+    name: "Jordyn Bishop",
+    slug: "jordyn-bishop",
+    specialty: "Neo-traditional",
+    bio: "",
+    image: "/images/artist-placeholder.webp",
+    gallery: [],
   },
 ];

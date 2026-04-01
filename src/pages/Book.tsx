@@ -41,7 +41,7 @@ const artistOptions = [
   { value: "Soodie Yang", label: "Soodie Yang", note: "Black & Grey Realism" },
   { value: "Brianne Thorne", label: "Brianne Thorne", note: "Neo-Traditional/Neo-Japanese" },
   { value: "Atisha Rainey", label: "Atisha Rainey", note: "Neo-Traditional" },
-  { value: "Jay Skeleton", label: "Jay Skeleton", note: "Neo-Japanese/Black & Grey Illustrative" },
+  { value: "Jordyn Bishop", label: "Jordyn Bishop", note: "Neo-Traditional" },
   { value: "No Preference", label: "No Preference", note: "" },
 ];
 
@@ -62,7 +62,7 @@ const Book = () => {
     "soodie-yang": "Soodie Yang",
     "brianne-thorne": "Brianne Thorne",
     "atisha-rainey": "Atisha Rainey",
-    "jay-skeleton": "Jay Skeleton",
+    "jordyn-bishop": "Jordyn Bishop",
   };
 
   const artistParam = searchParams.get("artist") || "";
