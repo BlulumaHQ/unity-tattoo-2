@@ -14,8 +14,8 @@ export const artists: Artist[] = [
   {
     name: "Heather Drew",
     slug: "heather-drew",
-    specialty: "Fine line & illustrative",
-    bio: "Heather brings a refined, illustrative approach to every piece. Her attention to detail and dedication to craft make her one of Unity Tattoo's most sought-after artists.",
+    specialty: "Realism",
+    bio: "Heather specializes in realism. Her work ranges from refined micro tattoos, life-like animal and pet portraits, to subjects with just the right dose of the strange and disturbing.",
     image: "/images/artist-heather.webp",
     gallery: [
       "/images/artist-heather.webp",
