@@ -41,7 +41,7 @@ const reviews = [
   {
     name: "Jordan K.",
     rating: 5,
-    text: "Best tattoo shop in Vancouver. The studio is clean, welcoming, and the artists really take the time to understand your vision.",
+    text: "Best tattoo shop in Vancouver. The shop is clean, welcoming, and the artists really take the time to understand your vision.",
   },
   {
     name: "Alex R.",
