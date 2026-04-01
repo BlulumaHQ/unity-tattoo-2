@@ -73,6 +73,10 @@ export const artists: Artist[] = [
     bio: "Jesse Kvarnstrom is a tattoo artist whose work blends elements of traditional and new school tattoo styles. Drawing inspiration from American traditional, neo-traditional, and new school influences, he brings a unique twist to each design.",
     image: "/images/artist-jesse.webp",
     gallery: [
+      "/images/portfolio/jesse-portfolio-13.webp",
+      "/images/portfolio/jesse-portfolio-14.webp",
+      "/images/portfolio/jesse-portfolio-15.webp",
+      "/images/portfolio/jesse-portfolio-16.webp",
       "/images/portfolio/jesse-portfolio-17.webp",
       "/images/portfolio/jesse-portfolio-18.webp",
       "/images/portfolio/jesse-portfolio-19.webp",
