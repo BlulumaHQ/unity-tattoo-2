@@ -20,6 +20,10 @@ export const artists: Artist[] = [
     gallery: [
       "/images/portfolio/heather-portfolio-01.webp",
       "/images/portfolio/heather-portfolio-02.webp",
+      "/images/portfolio/heather-portfolio-03.webp",
+      "/images/portfolio/heather-portfolio-04.webp",
+      "/images/portfolio/heather-portfolio-05.webp",
+      "/images/portfolio/heather-portfolio-06.webp",
       "/images/portfolio/heather-portfolio-07.webp",
       "/images/portfolio/heather-portfolio-08.webp",
       "/images/portfolio/heather-portfolio-09.webp",
