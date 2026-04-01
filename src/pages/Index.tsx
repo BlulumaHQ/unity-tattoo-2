@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Star, ArrowRight, MapPin, Phone } from "lucide-react";
 import { artists } from "@/data/artists";
@@ -57,6 +57,14 @@ const reveal = {
 
 const Index = () => {
   const recentWorkImages = useMemo(() => shuffleArray(allRecentWorkImages).slice(0, 8), []);
+
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.type = "module";
+    s.src = "https://w.behold.so/widget.js";
+    document.head.appendChild(s);
+    return () => { s.remove(); };
+  }, []);
 
   return (
     <>
@@ -329,54 +337,8 @@ const Index = () => {
       ═══════════════════════════════════════════ */}
       <section className="relative bg-foreground text-background py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <motion.h2
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-normal text-center mb-14"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Recent Work
-          </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
-            {recentWorkImages.map((src, num) => (
-              <motion.div
-                key={num}
-                variants={reveal}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.4, delay: num * 0.04 }}
-                className="aspect-square overflow-hidden"
-              >
-                <img
-                  src={src}
-                  alt={`Recent tattoo work ${num + 1}`}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center mt-14"
-          >
-            <Link
-              to="/book"
-              className="inline-flex items-center gap-3 bg-background text-foreground px-10 py-4 text-sm tracking-[0.15em] uppercase font-semibold transition-all duration-300 hover:bg-background/90 active:scale-[0.97]"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Book an Appointment <ArrowRight size={16} />
-            </Link>
-          </motion.div>
+          {/* @ts-ignore */}
+          <behold-widget feed-id="UP643EH7awHcjw1S00HE"></behold-widget>
         </div>
       </section>
 
