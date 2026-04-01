@@ -56,14 +56,9 @@ export const artists: Artist[] = [
     bio: "Bronson's tattoo art style is best described as cursed neotraditional, with bold lines, bright colour schemes, and a grotesque take on pop culture characters. Due to his traditional apprenticeship however, he's more than comfortable to do black and grey, traditional americana, or any number of tattoo styles.",
     image: "/images/artist-bronson.webp",
     gallery: [
-      "/images/portfolio/tattoo-trad-eagle.jpg",
-      "/images/portfolio/tattoo-neo-trad-skull-rose.jpg",
-      "/images/portfolio/tattoo-eagle-snake.webp",
-      "/images/portfolio/tattoo-strawberry-heart.webp",
-      "/images/portfolio/tattoo-robot-helmet.webp",
-      "/images/portfolio/tattoo-snake-bg.webp",
-      "/images/portfolio/tattoo-frog-samurai.webp",
-      "/images/portfolio/tattoo-wolf-realism.jpg",
+      "/images/portfolio/bronson-portfolio-10.webp",
+      "/images/portfolio/bronson-portfolio-11.webp",
+      "/images/portfolio/bronson-portfolio-12.webp",
     ],
   },
   {
