@@ -65,8 +65,8 @@ export const artists: Artist[] = [
   {
     name: "Jesse Kvarnstrom",
     slug: "jesse-kvarnstrom",
-    specialty: "Realism & portrait",
-    bio: "Jesse's hyperrealistic tattoos capture incredible detail. Specializing in portraits and realism, his work speaks to a deep understanding of light, shadow, and form.",
+    specialty: "Neo-traditional & traditional",
+    bio: "Jesse Kvarnstrom is a tattoo artist whose work blends elements of traditional and new school tattoo styles. Drawing inspiration from American traditional, neo-traditional, and new school influences, he brings a unique twist to each design.",
     image: "/images/artist-jesse.webp",
     gallery: [
       "/images/artist-jesse.webp",
