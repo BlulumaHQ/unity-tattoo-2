@@ -41,7 +41,7 @@ const reviews = [
   {
     name: "Jordan K.",
     rating: 5,
-    text: "Best tattoo shop in Vancouver. The studio is clean, welcoming, and the artists really take the time to understand your vision.",
+    text: "Best tattoo shop in Vancouver. The shop is clean, welcoming, and the artists really take the time to understand your vision.",
   },
   {
     name: "Alex R.",
@@ -64,7 +64,7 @@ const Index = () => {
           SECTION 1 — HERO
       ═══════════════════════════════════════════ */}
       <section className="relative min-h-[100svh] grid grid-cols-1 lg:grid-cols-2">
-        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-24 py-24 lg:py-0 bg-foreground text-background order-2 lg:order-1">
+        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-24 py-28 sm:py-32 lg:py-0 bg-foreground text-background order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -136,7 +136,7 @@ const Index = () => {
           >
             <img
               src="/images/shop-exterior.jpg"
-              alt="Unity Tattoo studio"
+              alt="Unity Tattoo shop"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/20" />
@@ -390,7 +390,7 @@ const Index = () => {
       </section>
 
       {/* ═══════════════════════════════════════════
-          SECTION 5 — THE STUDIO
+          SECTION 5 — THE SHOP
       ═══════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
@@ -405,7 +405,7 @@ const Index = () => {
                 className="text-3xl md:text-5xl font-normal mb-6"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                The Studio
+                The Shop
               </motion.h2>
               <motion.p
                 variants={reveal}
