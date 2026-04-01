@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -13,6 +13,8 @@ interface ImageLightboxProps {
 }
 
 const ImageLightbox = ({ images, currentIndex, isOpen, onClose, onNext, onPrev, altPrefix = "Image" }: ImageLightboxProps) => {
+  const touchStart = useRef<number | null>(null);
+
   useEffect(() => {
     if (!isOpen) return;
     const handleKey = (e: KeyboardEvent) => {
@@ -28,6 +30,20 @@ const ImageLightbox = ({ images, currentIndex, isOpen, onClose, onNext, onPrev, 
     };
   }, [isOpen, onClose, onNext, onPrev]);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStart.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart.current === null) return;
+    const diff = e.changedTouches[0].clientX - touchStart.current;
+    if (Math.abs(diff) > 50) {
+      if (diff < 0) onNext();
+      else onPrev();
+    }
+    touchStart.current = null;
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -37,6 +53,8 @@ const ImageLightbox = ({ images, currentIndex, isOpen, onClose, onNext, onPrev, 
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
           onClick={onClose}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           <button onClick={onClose} className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10">
             <X size={28} />
