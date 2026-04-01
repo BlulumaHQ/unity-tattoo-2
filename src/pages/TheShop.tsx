@@ -19,7 +19,7 @@ const TheShop = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="space-y-8 text-center">
             <h2 className="section-heading mb-8">About Unity Tattoo</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Unity Tattoo is a premier tattoo studio located in the heart of Vancouver's vibrant Commercial Drive neighborhood. Our collective brings together some of the most talented tattoo artists in British Columbia, each with their own distinct style and artistic vision.
+              Unity Tattoo is a premier tattoo shop located in the heart of Vancouver's vibrant Commercial Drive neighborhood. Our collective brings together some of the most talented tattoo artists in British Columbia, each with their own distinct style and artistic vision.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               We believe that every tattoo tells a story. Our artists work closely with each client to understand their vision and create custom designs that are deeply personal and artistically exceptional. Whether you're looking for fine line work, traditional designs, realism, or something entirely unique, our team has the skill and creativity to bring your ideas to life.
