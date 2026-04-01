@@ -23,13 +23,13 @@ const App = () => (
         <Toaster />
         <Sonner />
         <Helmet>
-          <title>Unity Tattoo | Vancouver Tattoo Studio on Commercial Drive</title>
+          <title>Unity Tattoo | Vancouver Tattoo Shop on Commercial Drive</title>
           <meta
             name="description"
-            content="Unity Tattoo is a premier tattoo studio on Vancouver's Commercial Drive. Book your appointment with our talented team of artists specializing in fine line, realism, traditional, and custom designs."
+            content="Unity Tattoo is a premier tattoo shop on Vancouver's Commercial Drive. Book your appointment with our talented team of artists specializing in fine line, realism, traditional, and custom designs."
           />
-          <meta property="og:title" content="Unity Tattoo | Vancouver Tattoo Studio" />
-          <meta property="og:description" content="Premier tattoo studio on Vancouver's Commercial Drive featuring exceptional artists and custom designs." />
+          <meta property="og:title" content="Unity Tattoo | Vancouver Tattoo Shop" />
+          <meta property="og:description" content="Premier tattoo shop on Vancouver's Commercial Drive featuring exceptional artists and custom designs." />
           <meta property="og:type" content="website" />
         </Helmet>
         <BrowserRouter>

@@ -20,7 +20,7 @@ const terms = [
   "Cannot be redeemed for cash",
   "Cannot be combined with any other offers or discounts",
   "Lost or stolen gift cards cannot be replaced",
-  "Redeemable in-studio at Unity Tattoo only (1395 Commercial Drive, Vancouver, BC)",
+  "Redeemable in-shop at Unity Tattoo only (1395 Commercial Drive, Vancouver, BC)",
   "Gift cards may be used toward any tattoo service",
 ];
 

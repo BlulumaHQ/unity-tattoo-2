@@ -41,7 +41,7 @@ const TheShop = () => {
               <img src="/images/shop-exterior.jpg" alt="Unity Tattoo storefront" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
             </motion.div>
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="aspect-video overflow-hidden">
-              <img src="/images/shop-interior.webp" alt="Unity Tattoo studio interior" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src="/images/shop-interior.webp" alt="Unity Tattoo shop interior" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
             </motion.div>
           </div>
         </div>
