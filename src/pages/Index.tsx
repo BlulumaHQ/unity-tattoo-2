@@ -58,6 +58,14 @@ const reveal = {
 const Index = () => {
   const recentWorkImages = useMemo(() => shuffleArray(allRecentWorkImages).slice(0, 8), []);
 
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.type = "module";
+    s.src = "https://w.behold.so/widget.js";
+    document.head.appendChild(s);
+    return () => { s.remove(); };
+  }, []);
+
   return (
     <>
       {/* ═══════════════════════════════════════════
