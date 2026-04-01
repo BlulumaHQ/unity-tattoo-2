@@ -64,7 +64,7 @@ const Index = () => {
           SECTION 1 — HERO
       ═══════════════════════════════════════════ */}
       <section className="relative min-h-[100svh] grid grid-cols-1 lg:grid-cols-2">
-        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-24 py-28 sm:py-32 lg:py-0 bg-foreground text-background order-2 lg:order-1">
+        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-24 py-32 sm:py-36 md:py-40 lg:py-36 xl:py-40 bg-foreground text-background order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -114,16 +114,6 @@ const Index = () => {
               </Link>
             </div>
 
-            <div className="flex items-center gap-3 text-background/40">
-              <div className="flex gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={13} className="fill-yellow-500 text-yellow-500" />
-                ))}
-              </div>
-              <span className="text-xs tracking-wide" style={{ fontFamily: "var(--font-body)" }}>
-                5-Star Rated on Google
-              </span>
-            </div>
           </motion.div>
         </div>
 
@@ -155,15 +145,16 @@ const Index = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center justify-center gap-2 mb-8"
+            className="text-center mb-8 space-y-2"
           >
-            <div className="flex gap-0.5">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} size={16} className="fill-yellow-500 text-yellow-500" />
-              ))}
-            </div>
+            <p
+              className="text-sm tracking-wide text-muted-foreground"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              ⭐ Average Rating: 4.8 / 5
+            </p>
             <span
-              className="text-xs tracking-[0.15em] uppercase text-muted-foreground"
+              className="text-xs tracking-[0.15em] uppercase text-muted-foreground block"
               style={{ fontFamily: "var(--font-body)" }}
             >
               What People Say — Reviews from Google
