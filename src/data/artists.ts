@@ -123,6 +123,12 @@ export const artists: Artist[] = [
     bio: "Brianne is a multi-style tattoo artist with a special interest in illustrative neo-traditional and neo-Japanese design. With 7 years of experience in the trade, she is best known for her full colour anime and pop culture tattoos.",
     image: "/images/artist-brianne.webp",
     gallery: [
+      "/images/portfolio/brianne-portfolio-01.webp",
+      "/images/portfolio/brianne-portfolio-02.webp",
+      "/images/portfolio/brianne-portfolio-03.webp",
+      "/images/portfolio/brianne-portfolio-04.webp",
+      "/images/portfolio/brianne-portfolio-05.webp",
+      "/images/portfolio/brianne-portfolio-06.webp",
       "/images/portfolio/brianne-portfolio-07.webp",
       "/images/portfolio/brianne-portfolio-08.webp",
       "/images/portfolio/brianne-portfolio-09.webp",
