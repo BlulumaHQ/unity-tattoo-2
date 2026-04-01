@@ -163,7 +163,7 @@ export const artists: Artist[] = [
     slug: "jordyn-bishop",
     specialty: "Neo-traditional",
     bio: "",
-    image: "/images/artist-placeholder.webp",
+    image: "/images/artist-jordyn-feature.png",
     gallery: [
       "/images/portfolio/jordyn-portfolio-01.webp",
       "/images/portfolio/jordyn-portfolio-02.webp",

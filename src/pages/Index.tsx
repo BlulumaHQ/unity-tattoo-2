@@ -257,12 +257,14 @@ const Index = () => {
                     to={`/artists/${artist.slug}`}
                     className={`relative overflow-hidden block ${index % 2 === 1 ? "md:order-2" : ""}`}
                   >
-                    <img
-                      src={artist.image}
-                      alt={artist.name}
-                      className="w-full h-full object-cover min-h-[240px] md:min-h-0 transition-all duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
+                    <div className="aspect-[7/5]">
+                      <img
+                        src={artist.image}
+                        alt={artist.name}
+                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500" />
                   </Link>
 
