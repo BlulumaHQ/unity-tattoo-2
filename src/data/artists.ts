@@ -142,6 +142,14 @@ export const artists: Artist[] = [
     specialty: "Neo-traditional",
     bio: "",
     image: "/images/artist-placeholder.webp",
-    gallery: [],
+    gallery: [
+      "/images/portfolio/jordyn-portfolio-02.webp",
+      "/images/portfolio/jordyn-portfolio-03.webp",
+      "/images/portfolio/jordyn-portfolio-05.webp",
+      "/images/portfolio/jordyn-portfolio-06.webp",
+      "/images/portfolio/jordyn-portfolio-07.webp",
+      "/images/portfolio/jordyn-portfolio-08.webp",
+      "/images/portfolio/jordyn-portfolio-09.webp",
+    ],
   },
 ];
