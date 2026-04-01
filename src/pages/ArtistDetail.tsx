@@ -78,15 +78,15 @@ const ArtistDetail = () => {
 
       {artist.gallery.length > 0 && (
         <section className="pb-24 md:pb-32">
-          <div className="container mx-auto px-0 md:px-4">
-            <div className="gallery-grid">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
               {artist.gallery.map((img, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="aspect-square overflow-hidden cursor-pointer"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="aspect-square overflow-hidden cursor-pointer rounded-sm"
                   onClick={() => openLightbox(index)}
                 >
                   <img
