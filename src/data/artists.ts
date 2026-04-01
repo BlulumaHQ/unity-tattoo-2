@@ -18,11 +18,14 @@ export const artists: Artist[] = [
     bio: "Heather specializes in realism. Her work ranges from refined micro tattoos, life-like animal and pet portraits, to subjects with just the right dose of the strange and disturbing.",
     image: "/images/artist-heather.webp",
     gallery: [
+      "/images/portfolio/heather-portfolio-01.webp",
+      "/images/portfolio/heather-portfolio-02.webp",
       "/images/portfolio/heather-portfolio-07.webp",
       "/images/portfolio/heather-portfolio-08.webp",
       "/images/portfolio/heather-portfolio-09.webp",
       "/images/portfolio/heather-portfolio-10.webp",
       "/images/portfolio/heather-portfolio-11.webp",
+      "/images/portfolio/heather-portfolio-12.webp",
     ],
   },
   {
@@ -53,14 +56,9 @@ export const artists: Artist[] = [
     bio: "Bronson's tattoo art style is best described as cursed neotraditional, with bold lines, bright colour schemes, and a grotesque take on pop culture characters. Due to his traditional apprenticeship however, he's more than comfortable to do black and grey, traditional americana, or any number of tattoo styles.",
     image: "/images/artist-bronson.webp",
     gallery: [
-      "/images/portfolio/tattoo-trad-eagle.jpg",
-      "/images/portfolio/tattoo-neo-trad-skull-rose.jpg",
-      "/images/portfolio/tattoo-eagle-snake.webp",
-      "/images/portfolio/tattoo-strawberry-heart.webp",
-      "/images/portfolio/tattoo-robot-helmet.webp",
-      "/images/portfolio/tattoo-snake-bg.webp",
-      "/images/portfolio/tattoo-frog-samurai.webp",
-      "/images/portfolio/tattoo-wolf-realism.jpg",
+      "/images/portfolio/bronson-portfolio-10.webp",
+      "/images/portfolio/bronson-portfolio-11.webp",
+      "/images/portfolio/bronson-portfolio-12.webp",
     ],
   },
   {
@@ -70,6 +68,10 @@ export const artists: Artist[] = [
     bio: "Jesse Kvarnstrom is a tattoo artist whose work blends elements of traditional and new school tattoo styles. Drawing inspiration from American traditional, neo-traditional, and new school influences, he brings a unique twist to each design.",
     image: "/images/artist-jesse.webp",
     gallery: [
+      "/images/portfolio/jesse-portfolio-13.webp",
+      "/images/portfolio/jesse-portfolio-14.webp",
+      "/images/portfolio/jesse-portfolio-15.webp",
+      "/images/portfolio/jesse-portfolio-16.webp",
       "/images/portfolio/jesse-portfolio-17.webp",
       "/images/portfolio/jesse-portfolio-18.webp",
       "/images/portfolio/jesse-portfolio-19.webp",
