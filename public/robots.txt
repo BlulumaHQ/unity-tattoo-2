@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://unity-tattoo-b.lovable.app/sitemap.xml
