@@ -104,7 +104,7 @@ const Book = () => {
   const onSubmit = async (data: BookingFormData) => {
     setSubmitting(true);
     try {
-      // Upload reference images
+      // Upload reference images to storage
       const imageUrls: string[] = [];
       for (const file of files) {
         const fileName = `${Date.now()}-${file.name}`;
@@ -121,8 +121,36 @@ const Book = () => {
         imageUrls.push(urlData.publicUrl);
       }
 
-      // Insert booking request
-      const { error } = await supabase.from("booking_requests").insert({
+      // Submit to Formspree
+      const formspreePayload = {
+        first_name: data.firstName,
+        last_name: data.lastName,
+        email: data.email,
+        phone: data.phone || "",
+        placement: data.placement,
+        cover_up: data.isCoverup,
+        tattoo_size: data.tattooSize,
+        style: data.style,
+        colour_preference: data.colourPreference,
+        description: data.description,
+        preferred_artists: data.preferredArtists.join(", "),
+        preferred_days: data.preferredDays.join(", "),
+        preferred_time: data.preferredTime,
+        comments: data.additionalComments || "",
+        booked_before: data.bookedBefore,
+        reference_image_urls: imageUrls.length > 0 ? imageUrls.join(", ") : "None",
+      };
+
+      const formspreeRes = await fetch("https://formspree.io/f/xlgolpnd", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formspreePayload),
+      });
+
+      if (!formspreeRes.ok) throw new Error("Formspree submission failed");
+
+      // Also save to database as backup
+      await supabase.from("booking_requests").insert({
         first_name: data.firstName,
         last_name: data.lastName,
         email: data.email,
@@ -139,12 +167,14 @@ const Book = () => {
         additional_comments: data.additionalComments || null,
         booked_before: data.bookedBefore === "yes",
         reference_image_urls: imageUrls.length > 0 ? imageUrls : null,
+      }).then(({ error }) => {
+        if (error) console.error("DB backup error:", error);
       });
 
-      if (error) throw error;
       setSubmitted(true);
     } catch (err) {
       console.error("Submission error:", err);
+      alert("Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
     }
