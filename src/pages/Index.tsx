@@ -409,7 +409,7 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="text-muted-foreground leading-relaxed"
               >
-                Located on Vancouver's iconic Commercial Drive, Unity Tattoo has been a cornerstone of East Van's creative community since 2011. Our collective of 8 world-class artists brings together decades of experience across every tattoo style — from fine line realism to bold neo-traditional.
+                Located on Vancouver's iconic Commercial Drive, Unity Tattoo has been a cornerstone of East Van's creative community since 2011. Our collective of 8 talented artists brings together decades of experience across every tattoo style — from fine line realism to bold neo-traditional.
               </motion.p>
             </div>
             <motion.div

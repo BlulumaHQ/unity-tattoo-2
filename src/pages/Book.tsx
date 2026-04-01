@@ -62,7 +62,7 @@ const Book = () => {
     "soodie-yang": "Soodie Yang",
     "brianne-thorne": "Brianne Thorne",
     "atisha-rainey": "Atisha Rainey",
-    "jay-skeleton": "Jay Skeleton",
+    "jordyn-bishop": "Jordyn Bishop",
   };
 
   const artistParam = searchParams.get("artist") || "";
