@@ -20,6 +20,10 @@ export const artists: Artist[] = [
     gallery: [
       "/images/portfolio/heather-portfolio-01.webp",
       "/images/portfolio/heather-portfolio-02.webp",
+      "/images/portfolio/heather-portfolio-03.webp",
+      "/images/portfolio/heather-portfolio-04.webp",
+      "/images/portfolio/heather-portfolio-05.webp",
+      "/images/portfolio/heather-portfolio-06.webp",
       "/images/portfolio/heather-portfolio-07.webp",
       "/images/portfolio/heather-portfolio-08.webp",
       "/images/portfolio/heather-portfolio-09.webp",
@@ -56,6 +60,11 @@ export const artists: Artist[] = [
     bio: "Bronson's tattoo art style is best described as cursed neotraditional, with bold lines, bright colour schemes, and a grotesque take on pop culture characters. Due to his traditional apprenticeship however, he's more than comfortable to do black and grey, traditional americana, or any number of tattoo styles.",
     image: "/images/artist-bronson.webp",
     gallery: [
+      "/images/portfolio/bronson-portfolio-04.webp",
+      "/images/portfolio/bronson-portfolio-05.webp",
+      "/images/portfolio/bronson-portfolio-06.webp",
+      "/images/portfolio/bronson-portfolio-07.webp",
+      "/images/portfolio/bronson-portfolio-08.webp",
       "/images/portfolio/bronson-portfolio-10.webp",
       "/images/portfolio/bronson-portfolio-11.webp",
       "/images/portfolio/bronson-portfolio-12.webp",
