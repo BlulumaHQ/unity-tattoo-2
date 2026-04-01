@@ -18,11 +18,14 @@ export const artists: Artist[] = [
     bio: "Heather specializes in realism. Her work ranges from refined micro tattoos, life-like animal and pet portraits, to subjects with just the right dose of the strange and disturbing.",
     image: "/images/artist-heather.webp",
     gallery: [
+      "/images/portfolio/heather-portfolio-01.webp",
+      "/images/portfolio/heather-portfolio-02.webp",
       "/images/portfolio/heather-portfolio-07.webp",
       "/images/portfolio/heather-portfolio-08.webp",
       "/images/portfolio/heather-portfolio-09.webp",
       "/images/portfolio/heather-portfolio-10.webp",
       "/images/portfolio/heather-portfolio-11.webp",
+      "/images/portfolio/heather-portfolio-12.webp",
     ],
   },
   {
