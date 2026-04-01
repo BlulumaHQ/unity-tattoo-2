@@ -390,7 +390,7 @@ const Index = () => {
       </section>
 
       {/* ═══════════════════════════════════════════
-          SECTION 5 — THE STUDIO
+          SECTION 5 — THE SHOP
       ═══════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
@@ -405,7 +405,7 @@ const Index = () => {
                 className="text-3xl md:text-5xl font-normal mb-6"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                The Studio
+                The Shop
               </motion.h2>
               <motion.p
                 variants={reveal}
