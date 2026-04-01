@@ -45,14 +45,26 @@ const ArtistDetail = () => {
           {artist.specialty}
           {artist.isGuest && " · Guest Artist"}
         </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="text-muted-foreground max-w-xl mx-auto leading-relaxed mb-10 px-4"
-        >
-          {artist.bio}
-        </motion.p>
+        {artist.bio && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-muted-foreground max-w-xl mx-auto leading-relaxed mb-10 px-4"
+          >
+            {artist.bio}
+          </motion.p>
+        )}
+        {!artist.bio && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-muted-foreground/50 max-w-xl mx-auto leading-relaxed mb-10 px-4 italic"
+          >
+            Bio coming soon.
+          </motion.p>
+        )}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
