@@ -144,14 +144,10 @@ export const artists: Artist[] = [
     bio: "Atisha is known for her strong illustrative skill set, which features a blend of various styles. She enjoys incorporating Art Nouveau influences, adding an elegant and flowing aesthetic to her designs, while using gothic elements to create stark, contrasting visuals.",
     image: "/images/artist-atisha.webp",
     gallery: [
-      "/images/portfolio/tattoo-moon-woman.webp",
-      "/images/portfolio/tattoo-neo-trad-skull-rose.jpg",
-      "/images/portfolio/tattoo-robot-helmet.webp",
-      "/images/portfolio/tattoo-watercolor-bird.jpg",
-      "/images/portfolio/tattoo-frog-samurai.webp",
-      "/images/portfolio/tattoo-fineline-botanical.jpg",
-      "/images/portfolio/tattoo-cat-portrait.webp",
-      "/images/portfolio/tattoo-japanese-dragon.jpg",
+      "/images/portfolio/atisha-portfolio-00.webp",
+      "/images/portfolio/atisha-portfolio-10.webp",
+      "/images/portfolio/atisha-portfolio-11.webp",
+      "/images/portfolio/atisha-portfolio-12.webp",
     ],
   },
   {
