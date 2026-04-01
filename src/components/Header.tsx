@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
-import logoSvg from "@/assets/unity-tattoo-logo.svg";
+import logoImg from "@/assets/unity-tattoo-logo-main.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -25,7 +25,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-white/10" style={{ backgroundColor: 'hsl(0 0% 5% / 0.95)' }}>
       <div className="container mx-auto px-4 flex items-center justify-between h-[70px] md:h-[80px]">
         <Link to="/" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
-          <img src={logoSvg} alt="Unity Tattoo" className="h-[60px] w-auto" />
+          <img src={logoImg} alt="Unity Tattoo" className="h-[60px] w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
