@@ -70,7 +70,7 @@ const ArtistDetail = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
         >
-          <Link to="/book" className="cta-button">
+          <Link to={`/book?artist=${artist.slug}`} className="cta-button">
             Book with {artist.name.split(" ")[0]}
           </Link>
         </motion.div>
