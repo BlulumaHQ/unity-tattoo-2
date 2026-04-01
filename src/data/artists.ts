@@ -35,6 +35,8 @@ export const artists: Artist[] = [
     bio: "Paige specializes in neo-traditional and non-traditional styles, with a particular fondness for bright poppy colors and high-contrast designs. When she's not tattooing, Paige draws inspiration by immersing herself in books, or exploring the world outside.",
     image: "/images/artist-paige.webp",
     gallery: [
+      "/images/portfolio/paige-portfolio-01.webp",
+      "/images/portfolio/paige-portfolio-02.webp",
       "/images/portfolio/paige-portfolio-03.webp",
       "/images/portfolio/paige-portfolio-04.webp",
       "/images/portfolio/paige-portfolio-05.webp",
@@ -72,6 +74,7 @@ export const artists: Artist[] = [
     image: "/images/artist-jesse.webp",
     gallery: [
       "/images/portfolio/tattoo-wolf-realism.jpg",
+      "/images/portfolio/tattoo-wolf-realism.jpg",
       "/images/portfolio/tattoo-statue-realism.webp",
       "/images/portfolio/tattoo-cat-portrait.webp",
       "/images/portfolio/tattoo-snake-bg.webp",
@@ -79,6 +82,10 @@ export const artists: Artist[] = [
       "/images/portfolio/tattoo-trad-eagle.jpg",
       "/images/portfolio/tattoo-eagle-snake.webp",
       "/images/portfolio/tattoo-robot-helmet.webp",
+      "/images/portfolio/jesse-portfolio-17.webp",
+      "/images/portfolio/jesse-portfolio-18.webp",
+      "/images/portfolio/jesse-portfolio-19.webp",
+      "/images/portfolio/jesse-portfolio-20.webp",
     ],
   },
   {
@@ -145,11 +152,15 @@ export const artists: Artist[] = [
     gallery: [
       "/images/portfolio/jordyn-portfolio-02.webp",
       "/images/portfolio/jordyn-portfolio-03.webp",
+      "/images/portfolio/jordyn-portfolio-04.webp",
       "/images/portfolio/jordyn-portfolio-05.webp",
       "/images/portfolio/jordyn-portfolio-06.webp",
       "/images/portfolio/jordyn-portfolio-07.webp",
       "/images/portfolio/jordyn-portfolio-08.webp",
       "/images/portfolio/jordyn-portfolio-09.webp",
+      "/images/portfolio/jordyn-portfolio-10.webp",
+      "/images/portfolio/jordyn-portfolio-11.webp",
+      "/images/portfolio/jordyn-portfolio-12.webp",
     ],
   },
 ];
