@@ -136,7 +136,7 @@ const Index = () => {
           >
             <img
               src="/images/shop-exterior.jpg"
-              alt="Unity Tattoo studio"
+              alt="Unity Tattoo shop"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/20" />
