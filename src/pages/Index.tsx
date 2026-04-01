@@ -334,8 +334,18 @@ const Index = () => {
       ═══════════════════════════════════════════ */}
       <section className="relative bg-foreground text-background py-20 md:py-28">
         <div className="container mx-auto px-4">
+          <motion.h2
+            variants={reveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="section-heading text-background mb-12"
+          >
+            Recent Work
+          </motion.h2>
           {/* @ts-ignore */}
-          <behold-widget feed-id="UP643EH7awHcjw1S00HE"></behold-widget>
+          <behold-widget feed-id="aSEpgedpptorBzJbzqY3"></behold-widget>
         </div>
       </section>
 

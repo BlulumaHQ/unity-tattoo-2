@@ -36,7 +36,7 @@ const Footer = () => {
               { label: "Home", path: "/" },
               { label: "The Shop", path: "/the-shop" },
               { label: "Aftercare", path: "/aftercare" },
-              { label: "Gift Card", path: "/gift-card" },
+              
               { label: "Book Now", path: "/book" },
               { label: "Contact", path: "/contact" },
             ].map((link) => (
