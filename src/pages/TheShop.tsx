@@ -25,7 +25,7 @@ const TheShop = () => {
               We believe that every tattoo tells a story. Our artists work closely with each client to understand their vision and create custom designs that are deeply personal and artistically exceptional. Whether you're looking for fine line work, traditional designs, realism, or something entirely unique, our team has the skill and creativity to bring your ideas to life.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Our studio maintains the highest standards of cleanliness and safety. We use only premium inks and equipment, and our artists follow strict sterilization protocols to ensure a safe and comfortable experience for every client.
+              Our shop maintains the highest standards of cleanliness and safety. We use only premium inks and equipment, and our artists follow strict sterilization protocols to ensure a safe and comfortable experience for every client.
             </p>
           </motion.div>
         </div>
