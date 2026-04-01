@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Star, ArrowRight, MapPin, Phone } from "lucide-react";
 import { artists } from "@/data/artists";
