@@ -76,29 +76,31 @@ const ArtistDetail = () => {
         </motion.div>
       </section>
 
-      <section className="pb-24 md:pb-32">
-        <div className="container mx-auto px-0 md:px-4">
-          <div className="gallery-grid">
-            {artist.gallery.map((img, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="aspect-square overflow-hidden cursor-pointer"
-                onClick={() => openLightbox(index)}
-              >
-                <img
-                  src={img}
-                  alt={`${artist.name} tattoo work ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </motion.div>
-            ))}
+      {artist.gallery.length > 0 && (
+        <section className="pb-24 md:pb-32">
+          <div className="container mx-auto px-0 md:px-4">
+            <div className="gallery-grid">
+              {artist.gallery.map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="aspect-square overflow-hidden cursor-pointer"
+                  onClick={() => openLightbox(index)}
+                >
+                  <img
+                    src={img}
+                    alt={`${artist.name} tattoo work ${index + 1}`}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <ImageLightbox
         images={artist.gallery}
