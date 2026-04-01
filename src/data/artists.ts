@@ -142,6 +142,7 @@ export const artists: Artist[] = [
     bio: "",
     image: "/images/artist-placeholder.webp",
     gallery: [
+      "/images/portfolio/jordyn-portfolio-01.webp",
       "/images/portfolio/jordyn-portfolio-02.webp",
       "/images/portfolio/jordyn-portfolio-03.webp",
       "/images/portfolio/jordyn-portfolio-04.webp",
