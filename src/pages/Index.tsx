@@ -145,15 +145,16 @@ const Index = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center justify-center gap-2 mb-8"
+            className="text-center mb-8 space-y-2"
           >
-            <div className="flex gap-0.5">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} size={16} className="fill-yellow-500 text-yellow-500" />
-              ))}
-            </div>
+            <p
+              className="text-sm tracking-wide text-muted-foreground"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              ⭐ Average Rating: 4.8 / 5
+            </p>
             <span
-              className="text-xs tracking-[0.15em] uppercase text-muted-foreground"
+              className="text-xs tracking-[0.15em] uppercase text-muted-foreground block"
               style={{ fontFamily: "var(--font-body)" }}
             >
               What People Say — Reviews from Google
