@@ -84,17 +84,11 @@ const Index = () => {
             >
               8 experienced artists on Commercial Drive. Every style, done well.
             </p>
-            <p
-              className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-background/50 mb-6"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Tattooing Vancouver since 2011.
-            </p>
             <h1
               className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[0.92] mb-6"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              Vancouver's Most Trusted Tattoo Collective
+              Tattooing Vancouver Since 2011
             </h1>
             <p
               className="flex items-center gap-2 text-sm text-background/50 tracking-wide mb-10"
@@ -183,12 +177,15 @@ const Index = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4 italic">
                   "{review.text}"
                 </p>
-                <cite
-                  className="text-xs font-semibold tracking-wider uppercase not-italic"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {review.name}
-                </cite>
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-xs">⭐⭐⭐⭐⭐</span>
+                  <cite
+                    className="text-xs font-semibold tracking-wider uppercase not-italic"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {review.name}
+                  </cite>
+                </div>
               </motion.blockquote>
             ))}
           </div>
@@ -337,8 +334,18 @@ const Index = () => {
       ═══════════════════════════════════════════ */}
       <section className="relative bg-foreground text-background py-20 md:py-28">
         <div className="container mx-auto px-4">
+          <motion.h2
+            variants={reveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="section-heading text-background mb-12"
+          >
+            Recent Work
+          </motion.h2>
           {/* @ts-ignore */}
-          <behold-widget feed-id="UP643EH7awHcjw1S00HE"></behold-widget>
+          <behold-widget feed-id="aSEpgedpptorBzJbzqY3"></behold-widget>
         </div>
       </section>
 
