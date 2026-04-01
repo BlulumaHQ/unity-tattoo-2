@@ -107,13 +107,6 @@ const Index = () => {
                 Book an Appointment
                 <ArrowRight size={16} />
               </Link>
-              <Link
-                to="/gift-card"
-                className="inline-flex items-center gap-3 border-2 border-background/30 text-background px-8 py-5 text-sm tracking-[0.15em] uppercase font-semibold transition-all duration-300 hover:border-background/60 hover:bg-background/5 active:scale-[0.97]"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                Buy a Gift Card
-              </Link>
             </div>
 
           </motion.div>
@@ -264,12 +257,14 @@ const Index = () => {
                     to={`/artists/${artist.slug}`}
                     className={`relative overflow-hidden block ${index % 2 === 1 ? "md:order-2" : ""}`}
                   >
-                    <img
-                      src={artist.image}
-                      alt={artist.name}
-                      className="w-full h-full object-cover min-h-[240px] md:min-h-0 transition-all duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
+                    <div className="aspect-[7/5]">
+                      <img
+                        src={artist.image}
+                        alt={artist.name}
+                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500" />
                   </Link>
 
