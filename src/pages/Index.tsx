@@ -107,13 +107,6 @@ const Index = () => {
                 Book an Appointment
                 <ArrowRight size={16} />
               </Link>
-              <Link
-                to="/gift-card"
-                className="inline-flex items-center gap-3 border-2 border-background/30 text-background px-8 py-5 text-sm tracking-[0.15em] uppercase font-semibold transition-all duration-300 hover:border-background/60 hover:bg-background/5 active:scale-[0.97]"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                Buy a Gift Card
-              </Link>
             </div>
 
           </motion.div>
