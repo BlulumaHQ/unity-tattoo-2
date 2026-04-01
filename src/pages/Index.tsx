@@ -64,7 +64,7 @@ const Index = () => {
           SECTION 1 — HERO
       ═══════════════════════════════════════════ */}
       <section className="relative min-h-[100svh] grid grid-cols-1 lg:grid-cols-2">
-        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-24 py-28 sm:py-32 lg:py-0 bg-foreground text-background order-2 lg:order-1">
+        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-24 py-32 sm:py-36 md:py-40 lg:py-36 xl:py-40 bg-foreground text-background order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
