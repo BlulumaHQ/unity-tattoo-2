@@ -99,8 +99,8 @@ export const artists: Artist[] = [
   {
     name: "Brianne Throne",
     slug: "brianne-throne",
-    specialty: "Neo-traditional & illustrative",
-    bio: "Brianne's elegant designs celebrate bold color and rich illustration. Each piece is carefully composed with masterful detail and dynamic composition.",
+    specialty: "Neo-traditional & neo-Japanese",
+    bio: "Brianne is a multi-style tattoo artist with a special interest in illustrative neo-traditional and neo-Japanese design. With 7 years of experience in the trade, she is best known for her full colour anime and pop culture tattoos.",
     image: "/images/artist-brianne.webp",
     gallery: [
       "/images/artist-brianne.webp",
