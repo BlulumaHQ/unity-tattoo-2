@@ -31,8 +31,8 @@ export const artists: Artist[] = [
   {
     name: "Paige McGrath",
     slug: "paige-mcgrath",
-    specialty: "Blackwork & dotwork",
-    bio: "Paige specializes in bold blackwork and intricate dotwork designs. Her unique style blends traditional techniques with modern aesthetics.",
+    specialty: "Neo-traditional & non-traditional",
+    bio: "Paige specializes in neo-traditional and non-traditional styles, with a particular fondness for bright poppy colors and high-contrast designs. When she's not tattooing, Paige draws inspiration by immersing herself in books, or exploring the world outside.",
     image: "/images/artist-paige.webp",
     gallery: [
       "/images/artist-paige.webp",
