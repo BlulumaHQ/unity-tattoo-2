@@ -35,6 +35,8 @@ export const artists: Artist[] = [
     bio: "Paige specializes in neo-traditional and non-traditional styles, with a particular fondness for bright poppy colors and high-contrast designs. When she's not tattooing, Paige draws inspiration by immersing herself in books, or exploring the world outside.",
     image: "/images/artist-paige.webp",
     gallery: [
+      "/images/portfolio/paige-portfolio-01.webp",
+      "/images/portfolio/paige-portfolio-02.webp",
       "/images/portfolio/paige-portfolio-03.webp",
       "/images/portfolio/paige-portfolio-04.webp",
       "/images/portfolio/paige-portfolio-05.webp",
