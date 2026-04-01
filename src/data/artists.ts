@@ -48,8 +48,8 @@ export const artists: Artist[] = [
   {
     name: "Bronson Ramos",
     slug: "bronson-ramos",
-    specialty: "Traditional & neo-traditional",
-    bio: "Bronson's work is rooted in traditional tattoo art with a neo-traditional twist. Bold lines, vibrant energy, and timeless composition define his portfolio.",
+    specialty: "Cursed neo-traditional",
+    bio: "Bronson's tattoo art style is best described as cursed neotraditional, with bold lines, bright colour schemes, and a grotesque take on pop culture characters. Due to his traditional apprenticeship however, he's more than comfortable to do black and grey, traditional americana, or any number of tattoo styles.",
     image: "/images/artist-bronson.webp",
     gallery: [
       "/images/artist-bronson.webp",
