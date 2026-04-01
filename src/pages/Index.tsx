@@ -177,12 +177,15 @@ const Index = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4 italic">
                   "{review.text}"
                 </p>
-                <cite
-                  className="text-xs font-semibold tracking-wider uppercase not-italic"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {review.name}
-                </cite>
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-xs">⭐⭐⭐⭐⭐</span>
+                  <cite
+                    className="text-xs font-semibold tracking-wider uppercase not-italic"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {review.name}
+                  </cite>
+                </div>
               </motion.blockquote>
             ))}
           </div>
