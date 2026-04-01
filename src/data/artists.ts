@@ -82,8 +82,8 @@ export const artists: Artist[] = [
   {
     name: "Soodie Yang",
     slug: "soodie-yang",
-    specialty: "Watercolor & illustrative",
-    bio: "Soodie's watercolor tattoos are vibrant and expressive. Her illustrative style brings a painterly quality to skin art that is truly unique.",
+    specialty: "Black and grey realism & fine line",
+    bio: "Rooted in Black and Grey Realism, Soodie is inspired by classical statues and the beauty of the human form, which she translates to detailed, realistic tattoos.",
     image: "/images/artist-soodie.webp",
     gallery: [
       "/images/artist-soodie.webp",
