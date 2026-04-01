@@ -16,7 +16,7 @@ export const artists: Artist[] = [
     slug: "heather-drew",
     specialty: "Realism",
     bio: "Heather specializes in realism. Her work ranges from refined micro tattoos, life-like animal and pet portraits, to subjects with just the right dose of the strange and disturbing.",
-    image: "/images/artist-heather.webp",
+    image: "/images/artist-heather-feature.webp",
     gallery: [
       "/images/portfolio/heather-portfolio-01.webp",
       "/images/portfolio/heather-portfolio-02.webp",
