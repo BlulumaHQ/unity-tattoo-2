@@ -116,8 +116,8 @@ export const artists: Artist[] = [
   {
     name: "Atisha Rainey",
     slug: "atisha-rainey",
-    specialty: "Neo-traditional & color",
-    bio: "Atisha's neo-traditional work features bold colors and striking compositions. Her artistic vision brings a fresh perspective to classic tattooing styles.",
+    specialty: "Neo-traditional & illustrative",
+    bio: "Atisha is known for her strong illustrative skill set, which features a blend of various styles. She enjoys incorporating Art Nouveau influences, adding an elegant and flowing aesthetic to her designs, while using gothic elements to create stark, contrasting visuals.",
     image: "/images/artist-atisha.webp",
     gallery: [
       "/images/artist-atisha.webp",
