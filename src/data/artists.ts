@@ -74,6 +74,7 @@ export const artists: Artist[] = [
     image: "/images/artist-jesse.webp",
     gallery: [
       "/images/portfolio/tattoo-wolf-realism.jpg",
+      "/images/portfolio/tattoo-wolf-realism.jpg",
       "/images/portfolio/tattoo-statue-realism.webp",
       "/images/portfolio/tattoo-cat-portrait.webp",
       "/images/portfolio/tattoo-snake-bg.webp",
@@ -81,6 +82,10 @@ export const artists: Artist[] = [
       "/images/portfolio/tattoo-trad-eagle.jpg",
       "/images/portfolio/tattoo-eagle-snake.webp",
       "/images/portfolio/tattoo-robot-helmet.webp",
+      "/images/portfolio/jesse-portfolio-17.webp",
+      "/images/portfolio/jesse-portfolio-18.webp",
+      "/images/portfolio/jesse-portfolio-19.webp",
+      "/images/portfolio/jesse-portfolio-20.webp",
     ],
   },
   {
