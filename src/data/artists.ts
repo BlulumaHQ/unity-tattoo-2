@@ -85,6 +85,11 @@ export const artists: Artist[] = [
     bio: "Rooted in Black and Grey Realism, Soodie is inspired by classical statues and the beauty of the human form, which she translates to detailed, realistic tattoos.",
     image: "/images/artist-soodie.webp",
     gallery: [
+      "/images/portfolio/soodie-portfolio-01.webp",
+      "/images/portfolio/soodie-portfolio-02.webp",
+      "/images/portfolio/soodie-portfolio-03.webp",
+      "/images/portfolio/soodie-portfolio-04.webp",
+      "/images/portfolio/soodie-portfolio-05.webp",
       "/images/portfolio/soodie-portfolio-06.webp",
       "/images/portfolio/soodie-portfolio-07.webp",
       "/images/portfolio/soodie-portfolio-08.webp",
