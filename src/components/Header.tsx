@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
-import logoSvg from "@/assets/unity-tattoo-logo.svg";
+import logoImg from "@/assets/unity-tattoo-logo-main.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
