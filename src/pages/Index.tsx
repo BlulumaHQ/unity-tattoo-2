@@ -114,16 +114,6 @@ const Index = () => {
               </Link>
             </div>
 
-            <div className="flex items-center gap-3 text-background/40">
-              <div className="flex gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={13} className="fill-yellow-500 text-yellow-500" />
-                ))}
-              </div>
-              <span className="text-xs tracking-wide" style={{ fontFamily: "var(--font-body)" }}>
-                5-Star Rated on Google
-              </span>
-            </div>
           </motion.div>
         </div>
 
