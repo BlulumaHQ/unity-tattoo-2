@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail } from "lucide-react";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdapdwrb";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzdkapwr";
 
 const Contact = () => {
   const { toast } = useToast();
