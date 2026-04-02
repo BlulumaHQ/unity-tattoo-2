@@ -20,7 +20,7 @@ const StickyBookingCTA = () => {
       <div className="md:hidden fixed right-0 top-1/2 -translate-y-1/2 z-40">
         <Link
           to="/book"
-          className="flex items-center gap-2 px-3 py-2 text-[10px] tracking-[0.15em] uppercase font-medium text-white transition-colors shadow-lg hover:brightness-110"
+          className="flex items-center gap-2 px-4 py-3 text-[10px] tracking-[0.15em] uppercase font-medium text-white transition-colors shadow-lg hover:brightness-110"
           style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', backgroundColor: 'hsl(var(--brand-green))' }}
         >
           <Calendar size={12} />
