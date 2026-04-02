@@ -162,7 +162,7 @@ export const artists: Artist[] = [
     name: "Jordyn Bishop",
     slug: "jordyn-bishop",
     specialty: "Neo-traditional",
-    bio: "",
+    bio: "Jordyn is a tattoo apprentice with a focus on neo-traditional design and all things whimsical and fantasy-inspired. She is particularly fond of creating illustrative, character-driven work with feminine elements and bold yet soft colour palettes.",
     image: "/images/artist-jordyn-feature.png",
     gallery: [
       "/images/portfolio/jordyn-portfolio-01.webp",
