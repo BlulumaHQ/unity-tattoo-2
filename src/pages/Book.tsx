@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
@@ -12,6 +12,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Upload, CheckCircle, Loader2, ArrowLeft, ArrowRight } from "lucide-react";
+import { BookingPhotoError, bookingPhotoEmailFields, uploadBookingPhotos } from "@/lib/bookingPhotos";
 
 const bookingSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -57,6 +58,8 @@ const Book = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState("");
+  const uploadedPaths = useRef(new Map<File, string>());
   const [step, setStep] = useState(1);
 
   const slugToName: Record<string, string> = {
@@ -122,25 +125,18 @@ const Book = () => {
   };
 
   const onSubmit = async (data: BookingFormData) => {
+    if (submitting) return;
     setSubmitting(true);
+    setSubmissionError("");
     try {
-      const imageUrls: string[] = [];
-      for (const file of files) {
-        const fileName = `${Date.now()}-${file.name}`;
-        const { data: uploadData, error: uploadError } = await supabase.storage
-          .from("booking-references")
-          .upload(fileName, file);
-        if (uploadError) {
-          console.error("Upload error:", uploadError);
-          continue;
-        }
-        const { data: urlData } = supabase.storage
-          .from("booking-references")
-          .getPublicUrl(uploadData.path);
-        imageUrls.push(urlData.publicUrl);
-      }
+      const bucket = supabase.storage.from("booking-references");
+      const imageUrls = await uploadBookingPhotos(files, {
+        upload: (path, file) => bucket.upload(path, file, { upsert: false, contentType: file.type }),
+        sign: (path, expiresIn) => bucket.createSignedUrl(path, expiresIn),
+      }, uploadedPaths.current);
 
       const formspreePayload = {
+        ...bookingPhotoEmailFields(imageUrls),
         first_name: data.firstName,
         last_name: data.lastName,
         email: data.email,
@@ -156,7 +152,6 @@ const Book = () => {
         preferred_time: data.preferredTime,
         comments: data.additionalComments || "",
         booked_before: data.bookedBefore,
-        reference_image_urls: imageUrls.length > 0 ? imageUrls.join(", ") : "None",
       };
 
       const formspreeRes = await fetch("https://formspree.io/f/xzdkapwr", {
@@ -190,8 +185,9 @@ const Book = () => {
 
       setSubmitted(true);
     } catch (err) {
-      console.error("Submission error:", err);
-      alert("Something went wrong. Please try again.");
+      setSubmissionError(err instanceof BookingPhotoError
+        ? err.message
+        : "Your booking could not be confirmed. Check your connection and try again. If this keeps happening, contact the shop.");
     } finally {
       setSubmitting(false);
     }
@@ -257,6 +253,7 @@ const Book = () => {
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)}>
+          {submissionError && <p role="alert" className="text-destructive text-sm mb-5">{submissionError}</p>}
           <AnimatePresence mode="wait">
             {/* ── STEP 1: Contact Info ── */}
             {step === 1 && (
