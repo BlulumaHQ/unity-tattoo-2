@@ -38,7 +38,10 @@ export async function uploadBookingPhotos(
   return urls;
 }
 
-export function bookingPhotoEmailFields(urls: string[]) {
+export function bookingPhotoEmailFields(urls: string[]): Record<string, string | number> & {
+  reference_photo_count: number;
+  reference_image_urls: string;
+} {
   const individualFields = Object.fromEntries(
     urls.map((url, index) => [`reference_photo_${index + 1}_url`, url]),
   );
