@@ -5,12 +5,12 @@ const files = [1, 2, 3].map((i) => new File(["synthetic test image"], `private-n
 function storage() {
   return {
     upload: vi.fn(async (path: string) => ({ data: { path }, error: null })),
-    sign: vi.fn(async (path: string) => ({ data: { signedUrl: `https://example.test/signed/${path}?token=synthetic` }, error: null })),
+    sign: vi.fn(async (path: string, _expiresIn: number) => ({ data: { signedUrl: `https://example.test/signed/${path}?token=synthetic` }, error: null })),
   };
 }
 
 describe("booking reference photos", () => {
-  it("blocks notification when the second of three photos fails to upload", async () => {
+  it("blocks notification when a selected photo fails to upload", async () => {
     const client = storage();
     client.upload.mockRejectedValueOnce(new Error("network unavailable"));
     const notify = vi.fn();
